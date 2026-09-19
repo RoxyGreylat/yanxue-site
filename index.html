@@ -923,7 +923,7 @@ function siteCard(s){
   var line = LINES[s.line];
   var img = SITE_IMG[s.no];
   return '<a class="site-card" href="#site-'+s.no+'">'+
-    (img?'<img class="sc-img" src="'+img+'" alt="'+esc(s.name)+'" loading="lazy">':'')+
+    (img?'<img class="sc-img" src="'+img+'" alt="'+esc(s.name)+'" >':'')+
     '<div class="sc-top"><span class="sc-line">'+esc(line.name)+'</span><span class="sc-no">'+esc(s.no)+'</span></div>'+
     '<h4>'+esc(s.name)+'</h4>'+
     '<p>'+esc(s.desc)+'</p></a>';
@@ -975,7 +975,7 @@ function renderRoute(key){
           return '<div class="tl-item">'+
             '<div class="tl-dot"><b>'+(i+1)+'</b></div>'+
             '<a class="tl-card" href="#site-'+s.no+'">'+
-              (img?'<img class="tl-img" src="'+img+'" alt="'+esc(s.name)+'" loading="lazy">':'')+
+              (img?'<img class="tl-img" src="'+img+'" alt="'+esc(s.name)+'" >':'')+
               '<h3>'+esc(s.name)+' <span class="tag">'+esc(s.no)+'</span></h3><p>'+esc(s.desc)+'</p></a>'+
           '</div>';
         }).join("")+
