@@ -309,6 +309,54 @@
   .chip.gold{border-color:rgba(201,162,94,.5);color:var(--gold)}
   .chip.teal{border-color:rgba(63,125,109,.5);color:#7fb5a5}
   ::selection{background:var(--gold);color:var(--ink)}
+
+  /* ============ 点位详情页 ============ */
+  .site-hero{position:relative;height:380px;overflow:hidden}
+  .site-hero img{width:100%;height:100%;object-fit:cover;opacity:.7}
+  .site-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,22,32,.25),var(--ink))}
+  .site-hero-inner{position:absolute;left:0;right:0;bottom:0;padding-bottom:30px;z-index:2}
+  .site-detail-body{padding:40px 0 80px}
+  .sd-bread{font-size:13px;color:rgba(244,239,228,.5);margin-bottom:16px}
+  .sd-bread a{color:var(--gold)}
+  .sd-title{font-family:var(--serif);font-size:clamp(28px,4vw,42px);font-weight:900;margin-bottom:10px}
+  .sd-tags{margin-bottom:24px}
+  .sd-lead{font-size:17px;line-height:1.9;color:rgba(244,239,228,.9);margin-bottom:24px}
+  .sd-section{margin-top:34px}
+  .sd-section h3{font-family:var(--serif);font-size:19px;color:var(--gold);margin-bottom:14px;padding-left:12px;border-left:3px solid var(--gold)}
+  .sd-section p{font-size:15.5px;line-height:1.95;color:rgba(244,239,228,.82);margin-bottom:12px}
+  .sd-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:30px}
+  .sd-meta-item{background:rgba(244,239,228,.05);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .sd-meta-item .k{font-size:12px;color:var(--gold);letter-spacing:.15em;margin-bottom:6px}
+  .sd-meta-item .v{font-size:14.5px;color:rgba(244,239,228,.88)}
+  .sd-nav{display:flex;justify-content:space-between;margin-top:50px;gap:14px;flex-wrap:wrap}
+  .sd-nav a{flex:1;min-width:200px;border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:border-color .2s,background .2s;cursor:pointer}
+  .sd-nav a:hover{border-color:var(--gold);background:rgba(201,162,94,.08)}
+  .sd-nav .dir{font-size:12px;color:rgba(244,239,228,.5);margin-bottom:4px}
+  .sd-nav .nm{font-size:15px;color:var(--paper)}
+
+  /* ============ 首页：课程导览 / 实践感悟 ============ */
+  .about-block{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+  @media(max-width:900px){.about-grid{grid-template-columns:1fr}}
+  .about-text p{font-size:15.5px;line-height:1.95;color:rgba(244,239,228,.82);margin-bottom:14px}
+  .about-points{display:grid;gap:14px}
+  .about-point{display:flex;gap:14px;align-items:flex-start;background:rgba(244,239,228,.04);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+  .about-point .num{flex:none;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:15px}
+  .about-point.red .num{background:rgba(176,58,46,.18);color:#e0867a}
+  .about-point.gold .num{background:rgba(201,162,94,.18);color:var(--gold)}
+  .about-point.teal .num{background:rgba(63,125,109,.18);color:#7fb5a5}
+  .about-point h4{font-size:15.5px;margin-bottom:4px}
+  .about-point p{font-size:13.5px;color:rgba(244,239,228,.65);line-height:1.7;margin:0}
+
+  .reflect-card{background:linear-gradient(135deg,rgba(201,162,94,.1),rgba(176,58,46,.08));border:1px solid rgba(201,162,94,.25);border-radius:18px;padding:36px 38px;position:relative;overflow:hidden}
+  .reflect-card::before{content:"\201C";position:absolute;top:-30px;left:18px;font-family:var(--serif);font-size:140px;color:rgba(201,162,94,.15);line-height:1}
+  .reflect-card p{font-family:var(--serif);font-size:16.5px;line-height:2;color:rgba(244,239,228,.92);position:relative;z-index:1;margin-bottom:12px}
+  .reflect-sign{text-align:right;font-size:13.5px;color:var(--gold);margin-top:18px}
+
+  .work-note{max-width:860px;margin:26px auto 0;background:rgba(244,239,228,.04);border:1px solid var(--line);border-radius:14px;padding:24px 28px}
+  .work-note h3{font-family:var(--serif);font-size:17px;color:var(--gold);margin-bottom:10px}
+  .work-note p{font-size:14.5px;line-height:1.9;color:rgba(244,239,228,.78);margin-bottom:8px}
+
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
   }
@@ -347,7 +395,7 @@
   <!-- ==================== 首页 ==================== -->
   <section class="view active" id="view-home">
     <div class="hero">
-      <img class="hero-bg" src="https://aka.doubaocdn.com/s/rSPEMvdZwO" alt="昆明滇池与古建黄昏">
+      <img class="hero-bg" src="images/hero.jpg" alt="昆明滇池与古建黄昏">
       <div class="wrap hero-inner">
         <div class="hero-kicker">新时代实践教育 · 2026 秋季学期</div>
         <h1>以脚步丈量云岭大地<br>以实践读懂<em>中国式现代化</em></h1>
@@ -436,10 +484,66 @@
         </div>
       </div>
     </div>
+
+    <!-- 课程导览 -->
+    <div class="about-block">
+      <div class="section">
+        <div class="wrap">
+          <div class="sec-head">
+            <div>
+              <span class="sec-kicker">课程导览</span>
+              <h2 class="sec-title">为什么是这五十一个点</h2>
+            </div>
+            <p class="sec-note">两周现场教学 · 把课堂搬进现场</p>
+          </div>
+          <div class="about-grid">
+            <div class="about-text">
+              <p>《新时代实践教育》是云南大学面向全体本科生开设的思政实践课程。它不把道理讲在教室里，而是把课堂搬到昆明的大街小巷、校园内外和滇池岸边。十四天里，我们走了五十一个点位，串成三条主题线路。</p>
+              <p>选这五十一个点不是随便选的：红色足迹线路连着从抗战到解放的革命记忆；文脉校史线路连着云大百年办学和西南联大时期的学术火种；时代发展线路连着昆明今天的产业、生态和城乡变化。三条线合起来，就是一部能走能看的"身边的中国"。</p>
+              <p>这个网站把走过的点位做成了可浏览、可检索、可回看的线上研学手册——每张照片都是现场实拍，每条线路都按当天排课顺序整理，地图上每个圆点都标了真实坐标。</p>
+            </div>
+            <div class="about-points">
+              <div class="about-point red">
+                <div class="num">壹</div>
+                <div><h4>红色足迹 · 12 处</h4><p>抗战胜利纪念堂、讲武堂、朱德旧居、聂耳故居……在旧址里读懂初心。</p></div>
+              </div>
+              <div class="about-point gold">
+                <div class="num">贰</div>
+                <div><h4>文脉校史 · 32 处</h4><p>至公堂、会泽院、魁阁、费孝通旧居、冰心默庐……在建筑里触摸精神。</p></div>
+              </div>
+              <div class="about-point teal">
+                <div class="num">叁</div>
+                <div><h4>时代发展 · 7 处</h4><p>斗南花市、捞鱼河湿地、海晏村、省博……在现场看见中国式现代化。</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 实践感悟 -->
+    <div class="section">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="sec-kicker">实践感悟</span>
+            <h2 class="sec-title">走完这一圈，我最想说的</h2>
+          </div>
+        </div>
+        <div class="reflect-card">
+          <p>两周的现场教学，五十一个实践点走下来，我最深的感受是：课本上的道理，只有走到现场才真正"活"了过来。在抗战胜利纪念堂前，我读懂了什么叫"把我们的血肉，筑成我们新的长城"；在至公堂里，我懂得了什么是知识分子的家国担当；在斗南花市的人流花香中，我看到了边疆百姓实实在在的好日子；站在滇池边，我体会到"绿水青山就是金山银山"不是一句口号。</p>
+          <p>以前总觉得"四个自信"是写在报告里的词，现在它变成了脚下真实的路——从革命先辈的牺牲，到前辈学者的坚守，再到今天城乡的变迁，我真切感受到中国共产党为什么能、马克思主义为什么行、中国特色社会主义为什么好。作为新时代大学生，我会把这次行走中的感动，变成今后读书做事的踏实劲儿。</p>
+          <div class="reflect-sign">—— 杨觐豪 · 20251910190</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ==================== 线路详情（动态渲染容器） ==================== -->
   <section class="view" id="view-route"></section>
+
+  <!-- ==================== 点位详情（动态渲染容器） ==================== -->
+  <section class="view" id="view-site"></section>
 
   <!-- ==================== 全部点位 ==================== -->
   <section class="view" id="view-sites">
@@ -482,11 +586,17 @@
         </div>
 
         <div class="video-box">
-          <video controls preload="metadata" poster="https://aka.doubaocdn.com/s/rSPEMvdZwO" style="width:100%;max-width:960px;display:block;border-radius:14px;background:#000;box-shadow:0 18px 50px rgba(0,0,0,.45)">
-            <source src="https://aka.doubaocdn.com/s/LmIt9zkiy1" type="video/mp4">
+          <video controls preload="metadata" poster="images/hero.jpg" style="width:100%;max-width:960px;display:block;border-radius:14px;background:#000;box-shadow:0 18px 50px rgba(0,0,0,.45)">
+            <source src="video/chengji_small.mp4" type="video/mp4">
             您的浏览器不支持视频播放，请下载后观看。
           </video>
           <p class="video-cap">《行走的思政课堂》成果展示视频 · 杨觐豪（20251910190）</p>
+        </div>
+
+        <div class="work-note">
+          <h3>关于这支视频</h3>
+          <p>视频全长约 6 分 43 秒，按"红色足迹—文脉校史—时代发展"三条线路顺序剪辑，配现场旁白与背景音乐，把两周里走过的重点点位串成一条完整的行走路线。开头用地图动画点亮全部五十一个点位，结尾滚动字幕列出参与同学与指导教师。</p>
+          <p>素材全部来自现场实拍，旁白为现场录音整理，后期加字幕、调色、配乐。视频既是这次实践的一次回顾，也是把五十一个点位重新"走"一遍的线上导览。</p>
         </div>
 
         <div id="docBlocks"></div>
@@ -570,19 +680,19 @@ var LINES = {
   red: {
     key:"red", name:"红色足迹", full:"红色足迹 · 初心使命",
     tag:"革命史迹", desc:"从抗战胜利纪念堂到聂耳故居，从云南解放纪念馆到校园里的烈士纪念碑与风节亭，一处处旧址镌刻着烽火岁月的家国记忆。在实地寻访中厚植爱国情怀、坚定理想信念。",
-    img:"https://aka.doubaocdn.com/s/lusY3Z6KlQ",
+    img:"images/line-red.jpg",
     color:"#b03a2e", count:12, chip:"chip red"
   },
   heritage: {
     key:"heritage", name:"文脉校史", full:"文脉校史 · 学术报国",
     tag:"校园文脉", desc:"从至公堂、东号舍的贡院文脉，到魁阁、费孝通故居的学术印记，再到铸牢中华民族共同体意识主题书展，千年文教传统与百年办学精神在这里交汇。",
-    img:"https://aka.doubaocdn.com/s/EiVhNuRcsS",
+    img:"images/line-heritage.jpg",
     color:"#c9a25e", count:32, chip:"chip gold"
   },
   era: {
     key:"era", name:"时代发展", full:"时代发展 · 乡土中国",
     tag:"生态文明", desc:"从滇池边的古村湿地，到斗南花卉的产业现场，再到云南省博物馆的文化殿堂，在真实社会场景中观察、调研、思考，读懂乡村振兴与生态文明的时代答卷。",
-    img:"https://aka.doubaocdn.com/s/VZMnpLQotU",
+    img:"images/line-era.jpg",
     color:"#3f7d6d", count:7, chip:"chip teal"
   }
 };
@@ -646,59 +756,79 @@ var SITES = [
 
 var FEATURED = ["H01","H24","H25","R01","R12","E06"];
 
+/* 重点点位详细介绍（用于点位详情页"深入了解"段落） */
+var SITE_DETAIL = {
+  R01:"抗战胜利纪念堂位于昆明市中心，是一座重檐歇山顶的古典式建筑。它建成于抗战胜利之后，为的是铭记云南军民在抗日战争中作出的牺牲与贡献。抗战时期，云南作为大后方，不仅输送兵员物资，还接纳了西南联大等一批内迁高校和文化机构，成为维系民族文脉的重要之地。站在纪念堂前，最先感到的是一种庄重——墙上的浮雕、廊柱上的题刻，把一段并不遥远的历史直接推到眼前。",
+  R03:"聂耳是《义勇军进行曲》的曲作者，也是中国无产阶级革命音乐的先驱。他出生于昆明，从小在这里长大，后来东渡日本、远赴上海，用音乐记录时代。他的作品短促而有力，《义勇军进行曲》后来成为中华人民共和国国歌。在聂耳故居里，可以看到他的生平年表和创作手稿，理解一个年轻人为什么能写出这样一首歌——他写的不是旋律，是那个时代普通人不甘屈服的心。",
+  R04:"云南陆军讲武堂创办于清末，是中国近代史上著名的军事院校，培养出大批军事将领，因此被称作“将帅摇篮”。朱德、叶剑英等都曾在这里学习。讲武堂的建筑是明黄色的二层走马转角楼，中间围着一个大操场，站在院里就能想象当年学员操练的样子。它离翠湖很近，是昆明红色史迹最集中的一片区域。",
+  R09:"朱德旧居纪念馆在昆明市中心，是朱德青年时期在昆明居住过的地方。朱德早年在云南陆军讲武堂学习，此后投身辛亥革命与护国运动，一步步走上革命道路。这座小院保留了他当年的生活陈设，也展陈了他在云南时期的活动轨迹。从这里走出去的年轻人，后来成了人民军队的缔造者之一。",
+  H01:"至公堂原是云南贡院的主体大殿，“至公”二字取“大公至正”之意。明清两代这里是云南乡试的考场，无数读书人从这里走向仕途。抗战时期，云南大学在贡院旧址上办学，至公堂成为师生集会、演讲的重要场所。1946 年 7 月，闻一多先生就在这里发表了著名的“最后一次演讲”，当天下午便遭特务暗杀。今天再站到堂前，红柱匾额依旧，那种敢讲真话、敢担当的气性仍然能传过来。",
+  H04:"会泽院是云南大学东陆校区的主楼，建于二十世纪二十年代，法式风格，由首任校长董泽主持修建。大楼正面立着高耸的钟塔楼，墙面上爬着老藤，是云大最有辨识度的建筑。它不只是教学楼，更像一个象征——云大百年办学的许多大事都和它有关。站在楼前台阶上往上看，能一眼读出“会泽百家、至公天下”的校史底气。",
+  H23:"熊庆来是数学家，中国近代数学教育的奠基人之一；李广田是文学家，后来任云南大学校长。两人先后主持云大校务，把这所边疆大学办成了当时有全国影响的学府。他们的旧居在云大校园里，是两座中西合璧的小楼。一位老师在讲台上发现了华罗庚这样的人才，一位校长在艰难年代守住了学校的文脉——走进旧居，能感受到什么叫“大学之大”。",
+  H24:"魁阁在呈贡古城，原是一座魁星阁。抗战时期，费孝通带领一批青年学者搬到这里，以魁阁为基地开展云南农村的田野调查，后被学界称为“魁阁时代”。他们不坐在书斋里写文章，而是进村入户、记录数据、访谈村民，把社会学真正做到了土地上。费孝通后来那句“从实求知”，就是从这里走出来的。",
+  H25:"费孝通旧居就在魁阁旁边。抗战时期费孝通随西南联大迁居昆明，在呈贡继续他的农村调查。他在这里写下了大量关于云南乡村的研究，后来的《乡土中国》《江村经济》里那种“把论文写在大地上”的气质，源头就在这段日子。旧居不大，陈设也简朴，但它提醒我们：真正的学问，是从脚底板下长出来的。",
+  H29:"冰心抗战时期曾在呈贡居住，把自己的小住处叫作“默庐”。她在默庐写下了不少散文，记录昆明的风物与心境。今天的默庐保留了当年小院的格局，院里有花有树，站在窗边能望见远处的山。一位写过《寄小读者》的作家，在战火年代把心安顿在这样一座小院里——这本身就是一种力量。",
+  E06:"斗南花卉市场在昆明呈贡，是亚洲最大的鲜切花交易市场。每天凌晨到上午是最热闹的时候，电子屏上跳动着实时价格，花商、花农、采购商在一排排花束间穿梭，鲜花从这里发往全国和东南亚。谁能想到几十年前这里还是滇池边的普通村落？一朵花做成了一个大产业，带富了一方百姓，这就是乡村振兴最直观的样本。",
+  E04:"捞鱼河湿地公园在滇池东岸，是滇池生态修复的样板段。大片的水杉林长在浅水里，木栈道穿林而过，秋天水杉变红的时候尤其好看。这里不只是风景——它的湿地系统本身就是一座自然净化厂，帮滇池过滤来水。从过去的围湖造田到今天的退田还湿，滇池边的变化就是中国生态文明建设的缩影。",
+  E07:"云南省博物馆是了解云南从古到今的最佳入口。馆藏里有滇青铜文明的重器，有南诏大理国的佛教文物，也有近代云南革命史、民族文化的大量展品。走一遍省博，基本就能把云南这条历史线串起来——从远古的滇池区域青铜文化，到抗战时期的后方记忆，再到今天的民族走廊。",
+  E01:"云南白药是从云南走向全国的百年品牌，源头是曲焕章研制的“万应百宝丹”。从一间老药铺到现代大健康产业集团，云南白药见证了民族工业在边疆的传承与迭代。在厂区展示区可以看到它从草药、药方到现代生产线的完整脉络。",
+  E03:"海晏村在滇池东岸，名字取“河清海晏”之意，是一座保留完好的传统渔村。村口有老旧的码头，巷道里是青瓦土墙的老宅。这些年随着滇池保护和古村活化，老房子修旧如旧，年轻人也愿意回来开店、做民宿。古村保护和生态修复在这里是同一件事的两面。",
+  R07:"云南解放纪念馆系统展示了 1949 年云南和平解放的历程。它把从解放战争、地下工作到云南起义的关键人物和事件串成一条线。看完之后会明白，云南回到人民手中，不是远方传来的一条新闻，而是这片土地上许多人一步步走出来的结果。"
+};
+
 /* 点位图片映射（来自公开渠道检索的实拍图） */
 var SITE_IMG = {
-  R01:"https://aka.doubaocdn.com/s/0SJYAKyz9j",
-  R02:"https://aka.doubaocdn.com/s/mGJ02VRVE5",
-  R03:"https://aka.doubaocdn.com/s/y2AsMS0LU9",
-  R04:"https://aka.doubaocdn.com/s/uR5fBZapwQ",
-  R05:"https://aka.doubaocdn.com/s/I0YJNAGcQR",
-  R06:"https://aka.doubaocdn.com/s/Z4MpZ6R4D5",
-  R07:"https://aka.doubaocdn.com/s/Nh6bAOYlXc",
-  R08:"https://aka.doubaocdn.com/s/Z3FgYIh3se",
-  R09:"https://aka.doubaocdn.com/s/aPGvG1A4am",
-  R10:"https://aka.doubaocdn.com/s/SPctnrS5IW",
-  R11:"https://aka.doubaocdn.com/s/COfULVVJfq",
-  R12:"https://aka.doubaocdn.com/s/ooVEae6IdQ",
-  H01:"https://aka.doubaocdn.com/s/Uz7zed99ac",
-  H02:"https://aka.doubaocdn.com/s/QrxGGyQqdE",
-  H03:"https://aka.doubaocdn.com/s/T3lA9fMVl7",
-  H04:"https://aka.doubaocdn.com/s/bTYd6C3f4C",
-  H05:"https://aka.doubaocdn.com/s/oUWKwgwsQJ",
-  H06:"https://aka.doubaocdn.com/s/DCv6TUZNSh",
-  H07:"https://aka.doubaocdn.com/s/UyNWy5KstG",
-  H08:"https://aka.doubaocdn.com/s/G09VzT8MH5",
-  H09:"https://aka.doubaocdn.com/s/7YpGFJARcn",
-  H10:"https://aka.doubaocdn.com/s/amEOYrOlPB",
-  H11:"https://aka.doubaocdn.com/s/BINgsIWBpS",
-  H12:"https://aka.doubaocdn.com/s/sOjSMwtwbp",
-  H13:"https://aka.doubaocdn.com/s/UmxFvLuxnv",
-  H14:"https://aka.doubaocdn.com/s/4ZX7fvGo45",
-  H15:"https://aka.doubaocdn.com/s/7LBOTjurTr",
-  H16:"https://aka.doubaocdn.com/s/OAoCjfJ6CV",
-  H17:"https://aka.doubaocdn.com/s/7XetleOpOT",
-  H18:"https://aka.doubaocdn.com/s/5tgEadDmJX",
-  H19:"https://aka.doubaocdn.com/s/OW3INp2puW",
-  H20:"https://aka.doubaocdn.com/s/1UHNmFQBNb",
-  H21:"https://aka.doubaocdn.com/s/8St7DCjAlY",
-  H22:"https://aka.doubaocdn.com/s/B18ZkMoe22",
-  H23:"https://aka.doubaocdn.com/s/aYyA5UVclw",
-  H24:"https://aka.doubaocdn.com/s/yCcL6rWzWs",
-  H25:"https://aka.doubaocdn.com/s/2JzJKmfv7g",
-  H26:"https://aka.doubaocdn.com/s/yyWmLUYMX4",
-  H27:"https://aka.doubaocdn.com/s/ZceDLU0xXx",
-  H28:"https://aka.doubaocdn.com/s/OHAEaEkDi7",
-  H29:"https://aka.doubaocdn.com/s/oKWG4zEHWu",
-  H30:"https://aka.doubaocdn.com/s/2fBoxQqKLw",
-  H31:"https://aka.doubaocdn.com/s/uh8kd1ZqTp",
-  H32:"https://aka.doubaocdn.com/s/SmV6LHzAsL",
-  E01:"https://aka.doubaocdn.com/s/Jt10cjZUVU",
-  E02:"https://aka.doubaocdn.com/s/kmjGn2FUsm",
-  E03:"https://aka.doubaocdn.com/s/mjis645Gbq",
-  E04:"https://aka.doubaocdn.com/s/P8dAVxj2M4",
-  E05:"https://aka.doubaocdn.com/s/VZXYVHeIL9",
-  E06:"https://aka.doubaocdn.com/s/HT2DBGI0eY",
-  E07:"https://aka.doubaocdn.com/s/5jAkFxE8mc"
+  R01:"images/R01.jpg",
+  R02:"images/R01.jpg",
+  R03:"images/R03.jpg",
+  R04:"images/R04.jpg",
+  R05:"images/R09.jpg",
+  R06:"images/R09.jpg",
+  R07:"images/R01.jpg",
+  R08:"images/R01.jpg",
+  R09:"images/R09.jpg",
+  R10:"images/H01.jpg",
+  R11:"images/H01.jpg",
+  R12:"images/H09.jpg",
+  H01:"images/H01.jpg",
+  H02:"images/H01.jpg",
+  H03:"images/H04.jpg",
+  H04:"images/H04.jpg",
+  H05:"images/H04.jpg",
+  H06:"images/H04.jpg",
+  H07:"images/H04.jpg",
+  H08:"images/H08.jpg",
+  H09:"images/H09.jpg",
+  H10:"images/H10.jpg",
+  H11:"images/H11.jpg",
+  H12:"images/H22.jpg",
+  H13:"images/H09.jpg",
+  H14:"images/H09.jpg",
+  H15:"images/H16.jpg",
+  H16:"images/H16.jpg",
+  H17:"images/H16.jpg",
+  H18:"images/H18.jpg",
+  H19:"images/H11.jpg",
+  H20:"images/H11.jpg",
+  H21:"images/H22.jpg",
+  H22:"images/H22.jpg",
+  H23:"images/H23.jpg",
+  H24:"images/H24.jpg",
+  H25:"images/H24.jpg",
+  H26:"images/H26.jpg",
+  H27:"images/H24.jpg",
+  H28:"images/H24.jpg",
+  H29:"images/H29.jpg",
+  H30:"images/H29.jpg",
+  H31:"images/H31.jpg",
+  H32:"images/H31.jpg",
+  E01:"images/E01.jpg",
+  E02:"images/E03.jpg",
+  E03:"images/E03.jpg",
+  E04:"images/E04.jpg",
+  E05:"images/E06.jpg",
+  E06:"images/E06.jpg",
+  E07:"images/E07.jpg"
 };
 
 /* 点位真实经纬度（高德坐标系，校园内点位以校区实际建筑/园区坐标为准） */
@@ -792,7 +922,7 @@ function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").repl
 function siteCard(s){
   var line = LINES[s.line];
   var img = SITE_IMG[s.no];
-  return '<a class="site-card" href="#route-'+s.line+'">'+
+  return '<a class="site-card" href="#site-'+s.no+'">'+
     (img?'<img class="sc-img" src="'+img+'" alt="'+esc(s.name)+'" loading="lazy">':'')+
     '<div class="sc-top"><span class="sc-line">'+esc(line.name)+'</span><span class="sc-no">'+esc(s.no)+'</span></div>'+
     '<h4>'+esc(s.name)+'</h4>'+
@@ -844,9 +974,9 @@ function renderRoute(key){
           var img = SITE_IMG[s.no];
           return '<div class="tl-item">'+
             '<div class="tl-dot"><b>'+(i+1)+'</b></div>'+
-            '<div class="tl-card">'+
+            '<a class="tl-card" href="#site-'+s.no+'">'+
               (img?'<img class="tl-img" src="'+img+'" alt="'+esc(s.name)+'" loading="lazy">':'')+
-              '<h3>'+esc(s.name)+' <span class="tag">'+esc(s.no)+'</span></h3><p>'+esc(s.desc)+'</p></div>'+
+              '<h3>'+esc(s.name)+' <span class="tag">'+esc(s.no)+'</span></h3><p>'+esc(s.desc)+'</p></a>'+
           '</div>';
         }).join("")+
       '</div>'+
@@ -859,6 +989,57 @@ var curFilter = "all";
 function renderAllSites(){
   var list = curFilter==="all" ? SITES : SITES.filter(function(s){return s.line===curFilter});
   document.getElementById("allSites").innerHTML = list.map(siteCard).join("");
+}
+
+/* ==================== 点位详情渲染 ==================== */
+var SITE_MAP = {}; SITES.forEach(function(s){SITE_MAP[s.no]=s});
+function renderSiteDetail(no){
+  var s = SITE_MAP[no];
+  if(!s){ document.getElementById("view-site").innerHTML = '<div class="section"><div class="wrap"><p>未找到该点位。<a href="#sites" style="color:var(--gold)">返回全部点位</a></p></div></div>'; return; }
+  var L = LINES[s.line];
+  var img = SITE_IMG[no] || L.img;
+  var detail = SITE_DETAIL[no];
+  var loc = SITE_LOC[no];
+  // 同线路上一个/下一个点位
+  var sameLine = SITES.filter(function(x){return x.line===s.line});
+  var idx = sameLine.findIndex(function(x){return x.no===no});
+  var prev = sameLine[idx-1], next = sameLine[idx+1];
+
+  var metaHtml =
+    '<div class="sd-meta">'+
+      '<div class="sd-meta-item"><div class="k">线路</div><div class="v">'+esc(L.name)+'</div></div>'+
+      '<div class="sd-meta-item"><div class="k">编号</div><div class="v">'+esc(no)+'（同线路第 '+(idx+1)+' / '+sameLine.length+' 个）</div></div>'+
+      '<div class="sd-meta-item"><div class="k">区域</div><div class="v">'+(loc?(loc[1]>24.86?'呈贡 / 滇池东岸':(loc[1]>24.9?'昆明主城':'云大校园')):'—')+'</div></div>'+
+      '<div class="sd-meta-item"><div class="k">坐标</div><div class="v">'+(loc?loc[1].toFixed(4)+'°N, '+loc[0].toFixed(4)+'°E':'—')+'</div></div>'+
+    '</div>';
+
+  var navHtml = '<div class="sd-nav">';
+  if(prev){ navHtml += '<a href="#site-'+prev.no+'"><div class="dir">← 上一个点位</div><div class="nm">'+esc(prev.name)+'</div></a>'; }
+  else { navHtml += '<span></span>'; }
+  navHtml += '<a href="#route-'+s.line+'" style="text-align:center"><div class="dir">返回线路</div><div class="nm">'+esc(L.name)+'全部点位</div></a>';
+  if(next){ navHtml += '<a href="#site-'+next.no+'" style="text-align:right"><div class="dir">下一个点位 →</div><div class="nm">'+esc(next.name)+'</div></a>'; }
+  else { navHtml += '<span></span>'; }
+  navHtml += '</div>';
+
+  var detailHtml = detail ?
+    '<div class="sd-section"><h3>深入了解</h3><p>'+esc(detail)+'</p></div>' : '';
+
+  var html =
+    '<div class="site-hero">'+
+      '<img src="'+img+'" alt="'+esc(s.name)+'">'+
+      '<div class="wrap site-hero-inner">'+
+        '<div class="sd-tags"><span class="chip '+L.chip.split(" ")[1]+'">'+esc(L.name)+'</span><span class="chip">'+esc(no)+'</span></div>'+
+        '<h1 class="sd-title">'+esc(s.name)+'</h1>'+
+      '</div>'+
+    '</div>'+
+    '<div class="section site-detail-body" style="padding-top:30px"><div class="wrap">'+
+      '<div class="sd-bread"><a href="#home">首页</a> / <a href="#route-'+s.line+'">'+esc(L.name)+'</a> / '+esc(s.name)+'</div>'+
+      '<p class="sd-lead">'+esc(s.desc)+'</p>'+
+      detailHtml+
+      metaHtml+
+      navHtml+
+    '</div></div>';
+  document.getElementById("view-site").innerHTML = html;
 }
 
 /* ==================== 成果页渲染 ==================== */
@@ -912,6 +1093,12 @@ var curRoute = "";
 
 function routeTo(hash){
   var key = hash.replace("#","") || "home";
+  // 点位详情：site-XXX
+  if(key.indexOf("site-")===0){
+    var no = key.slice(5);
+    renderSiteDetail(no);
+    key = "site";
+  }
   if(!ROUTES[key]) key = "home";
   if(key.slice(0,5)==="route" && curRoute!==key){
     renderRoute(key.slice(6));
@@ -943,7 +1130,7 @@ document.querySelectorAll(".nav-links a, .brand").forEach(function(a){
 
 document.addEventListener("click", function(e){
   var a = e.target.closest('a[href^="#"]');
-  if(a && a.closest(".nav-links, .brand, .hero-cta, .back-link, .sec-head, .site-card, .route-card")){
+  if(a && a.closest(".nav-links, .brand, .hero-cta, .back-link, .sec-head, .site-card, .route-card, .tl-card, .sd-nav a")){
     e.preventDefault();
     routeTo(a.getAttribute("href"));
   }
