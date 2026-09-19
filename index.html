@@ -203,16 +203,15 @@
   .line-hero p{max-width:640px;font-size:15px;color:rgba(244,239,228,.75)}
   .timeline{position:relative;padding:10px 0 20px}
   .timeline::before{
-    content:"";position:absolute;left:13px;top:14px;bottom:14px;width:2px;
-    background:linear-gradient(180deg,var(--tline),rgba(201,162,94,.15));
+    content:"";position:absolute;left:5px;top:10px;bottom:10px;width:1px;
+    background:linear-gradient(180deg,var(--tline),rgba(201,162,94,.1));
   }
-  .tl-item{position:relative;padding:0 0 34px 52px}
+  .tl-item{position:relative;padding:0 0 34px 28px}
   .tl-dot{
-    position:absolute;left:0;top:4px;width:28px;height:28px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    background:var(--ink-3);border:2px solid var(--tline);
+    position:absolute;left:0;top:6px;width:11px;height:11px;border-radius:50%;
+    background:var(--tline);box-shadow:0 0 0 3px var(--ink);
   }
-  .tl-dot b{font-family:var(--serif);font-size:11px;color:var(--tline)}
+  .tl-dot b{display:none}
   .tl-card{
     padding:20px 24px;border-radius:14px;background:var(--ink-2);border:1px solid var(--line);
     transition:border-color .2s;
